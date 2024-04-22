@@ -1,0 +1,290 @@
+/*
+===================================
+Fonts
+===================================
+*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/*
+===================================
+CSS Variables
+===================================
+*/
+:root {
+  --clr-black: hsl(244, 23%, 12%);
+  --clr-grey: hsla(244, 23%, 12%, 0.7);
+  --clr-light-grey: hsla(15, 40%, 98%, 0.544);
+  --clr-white: hsl(20, 33%, 98%);
+  --clr-orange: hsl(12, 94%, 65%);
+  --ff-primary: "IBM Plex Sans", sans-serif;
+  --border-radius: 12px;
+  --center-mobile-size: 70vw;
+  --transition: all 0.4s ease-in-out;
+  --fluid-width: 400px;
+}
+
+/*
+===================================
+Global style
+===================================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  color: var(--ff-primary);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.45px;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+p {
+  line-height: 1.6rem;
+  margin-bottom: 2.5rem;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+.container {
+  border-radius: var(--border-radius);
+}
+
+.icon {
+  width: 1.3rem;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.icon:hover {
+  filter: invert(56%) sepia(85%) saturate(1497%) hue-rotate(326deg)
+    brightness(99%) contrast(98%);
+}
+
+@media screen and (min-width: 550px) {
+  :root {
+    --fluid-width: 580px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 4rem;
+    letter-spacing: -0.45px;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+/*
+===================================
+Header
+===================================
+*/
+header .background {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: url(/assets/bg-main-mobile.png) center/contain repeat;
+  background-position: 25vw -25vw;
+  z-index: -1;
+}
+
+header .banner {
+  padding: 2.5rem 1.5rem;
+}
+
+.banner-center {
+  width: 90vw;
+  max-width: var(--fluid-width);
+}
+
+.logo-img {
+  width: 9rem;
+  margin-bottom: 4rem;
+}
+
+.illustration-img {
+  width: 55vw;
+  margin-inline: auto;
+  position: relative;
+}
+
+.bcg-pattern--container {
+  background-color: var(--clr-black);
+  margin-top: -90vw;
+  padding-bottom: 5rem;
+}
+
+.bcg-pattern {
+  width: var(--center-mobile-size);
+  max-width: 70vw;
+  margin-inline: auto;
+}
+
+/* pattern on top right corner */
+.wide-screen--pattern {
+  position: absolute;
+  width: 25vw;
+  top: -3vw;
+  right: -1rem;
+  display: none;
+}
+
+@media screen and (min-width: 550px) {
+  .wide-screen--pattern {
+    display: block;
+  }
+  .bcg-pattern--container {
+    max-width: 95vw;
+    margin-inline: auto;
+  }
+  .illustration-img {
+    width: 33vw;
+    margin-left: 10vw;
+  }
+  .bcg-pattern--container {
+    margin-top: -55vw;
+  }
+
+  .bcg-pattern {
+    max-width: 40vw;
+  }
+}
+
+/*
+===================================
+Premium section
+===================================
+*/
+.premium--container {
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+  margin-top: -20vw;
+  position: relative;
+}
+
+.premium--center {
+  width: var(--center-mobile-size);
+  max-width: 80%;
+  margin-inline: auto;
+  padding-block: 3rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price--big-1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.download-btn {
+  display: block;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 3rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.ios-btn {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  margin-block: 1rem;
+}
+
+.ios-btn:hover {
+  background-color: var(--clr-grey);
+}
+
+.android-btn {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+}
+
+.android-btn:hover {
+  background-color: var(--clr-light-grey);
+}
+
+@media screen and (min-width: 550px) {
+  .premium--container {
+    max-width: 770px;
+    margin-inline: auto;
+  }
+  .premium--container {
+    width: 60vw;
+    margin-right: 10vw;
+    margin-top: -50vw;
+  }
+}
+
+/*
+===================================
+Footer
+===================================
+*/
+
+.footer-center {
+  padding: 2.5rem 1.5rem;
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.email {
+  color: inherit;
+}
+
+@media screen and (min-width: 971px) {
+  .footer-center {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 1fr;
+  }
+}
