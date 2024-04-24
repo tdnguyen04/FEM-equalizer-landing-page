@@ -20,7 +20,8 @@ CSS Variables
   --border-radius: 12px;
   --center-mobile-size: 70vw;
   --transition: all 0.4s ease-in-out;
-  --fluid-width: 400px;
+  --ios-hover: hsl(177, 68%, 64%);
+  --android-hover: hsl(33, 100%, 70%);
 }
 
 /*
@@ -38,6 +39,8 @@ Global style
 body {
   font-family: var(--ff-primary);
   color: var(--ff-primary);
+  background: url(/assets/bg-main-mobile.png) center/contain repeat;
+  background-position: 25vw -25vw;
 }
 
 h1,
@@ -88,30 +91,6 @@ a:visited {
     brightness(99%) contrast(98%);
 }
 
-@media screen and (min-width: 550px) {
-  :root {
-    --fluid-width: 580px;
-  }
-
-  h1,
-  h2,
-  h3 {
-    line-height: 1;
-    margin-bottom: 0.5em;
-  }
-
-  h1 {
-    font-size: 4rem;
-    letter-spacing: -0.45px;
-  }
-  h2 {
-    font-size: 2.5rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
-}
-
 /*
 ===================================
 End of Global style
@@ -125,10 +104,8 @@ Header
 */
 header .background {
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  background: url(/assets/bg-main-mobile.png) center/contain repeat;
-  background-position: 25vw -25vw;
   z-index: -1;
 }
 
@@ -137,13 +114,21 @@ header .banner {
 }
 
 .banner-center {
-  width: 90vw;
-  max-width: var(--fluid-width);
+  padding-right: 4rem;
 }
 
 .logo-img {
   width: 9rem;
   margin-bottom: 4rem;
+}
+
+/* pattern on top right corner */
+.wide-screen--pattern {
+  position: absolute;
+  width: 25vw;
+  top: -3vw;
+  right: -1rem;
+  display: none;
 }
 
 /*
@@ -167,42 +152,14 @@ Demo section
   background-color: var(--clr-black);
   margin-top: -90vw;
   padding-bottom: 5rem;
+  /* border: 5px solid red; */
 }
 
 .bcg-pattern {
   width: var(--center-mobile-size);
   max-width: 70vw;
   margin-inline: auto;
-}
-
-/* pattern on top right corner */
-.wide-screen--pattern {
-  position: absolute;
-  width: 25vw;
-  top: -3vw;
-  right: -1rem;
-  display: none;
-}
-
-@media screen and (min-width: 550px) {
-  .wide-screen--pattern {
-    display: block;
-  }
-  .bcg-pattern--container {
-    max-width: 95vw;
-    margin-inline: auto;
-  }
-  .illustration-img {
-    width: 33vw;
-    margin-left: 10vw;
-  }
-  .bcg-pattern--container {
-    margin-top: -55vw;
-  }
-
-  .bcg-pattern {
-    max-width: 40vw;
-  }
+  /* border: 5px solid red; */
 }
 
 /*
@@ -261,7 +218,7 @@ Premium section
 }
 
 .ios-btn:hover {
-  background-color: var(--clr-grey);
+  background-color: var(--ios-hover);
 }
 
 .android-btn {
@@ -270,19 +227,7 @@ Premium section
 }
 
 .android-btn:hover {
-  background-color: var(--clr-light-grey);
-}
-
-@media screen and (min-width: 550px) {
-  .premium--container {
-    max-width: 770px;
-    margin-inline: auto;
-  }
-  .premium--container {
-    width: 60vw;
-    margin-right: 10vw;
-    margin-top: -50vw;
-  }
+  background-color: var(--android-hover);
 }
 
 /*
@@ -310,16 +255,380 @@ Footer
   color: inherit;
 }
 
-@media screen and (min-width: 971px) {
-  .footer-center {
-    padding-top: 10rem;
-    display: grid;
-    grid-template-columns: 1.5fr 3fr 1fr;
-  }
-}
-
 /*
 ===================================
 End of Footer
 ===================================
 */
+
+/*
+**************************************
+550px 
+**************************************
+*/
+
+/*
+**************************************
+700px 
+**************************************
+ */
+
+@media screen and (min-width: 700px) {
+  /*
+  ===================================
+  Global styles
+  ===================================
+  */
+
+  :root {
+    --max-fluid-width-1: 700px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 4rem;
+    letter-spacing: -0.45px;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  /*
+  ===================================
+  End of Global styles
+  ===================================
+  */
+  /*
+  ===================================
+  Section styles
+  ===================================
+  */
+  .banner-center,
+  .bcg-pattern--container,
+  .footer-center {
+    width: 90vw;
+    max-width: var(--max-fluid-width-1);
+    margin-inline: auto;
+  }
+  /*
+  ===================================
+  End of Section styles
+  ===================================
+  */
+  /*
+  ===================================
+  Header
+  ===================================
+  */
+  .wide-screen--pattern {
+    display: block;
+  }
+  .banner-center {
+    padding-right: 8rem;
+  }
+  /*
+  ===================================
+  End of Header
+  ===================================
+  */
+  /*
+  ===================================
+  Demo section
+  ===================================
+  */
+  .bcg-pattern--container {
+    margin-top: -55vw;
+  }
+  .illustration-img {
+    width: 33vw;
+    margin-left: 15vw;
+  }
+
+  .bcg-pattern {
+    max-width: 40vw;
+  }
+  /*
+  ===================================
+  End of Demo section
+  ===================================
+  */
+  /*
+  ===================================
+  Premium section
+  ===================================
+  */
+  .premium--container {
+    max-width: 350px;
+    margin-inline: auto;
+    width: 55vw;
+    margin-right: 15vw;
+    margin-top: -50vw;
+  }
+  /*
+  ===================================
+  End of Premium section
+  ===================================
+  */
+}
+
+/*
+**************************************
+847px 
+**************************************
+ */
+
+@media screen and (min-width: 847px) {
+  /*
+  ===================================
+  Global styles
+  ===================================
+  */
+  :root {
+    --max-fluid-width-2: 830px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 0.8;
+    margin-bottom: 0.3em;
+  }
+
+  h1 {
+    font-size: 5.5rem;
+    letter-spacing: -0.45px;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  /*
+  ===================================
+  End of Global styles
+  ===================================
+  */
+  /*
+  ===================================
+  Section styles
+  ===================================
+  */
+  .banner-center,
+  .bcg-pattern--container,
+  .footer-center {
+    width: 90vw;
+    max-width: var(--max-fluid-width-2);
+    margin-inline: auto;
+  }
+  /*
+  ===================================
+  End of Section styles
+  ===================================
+  */
+  .banner-center {
+    padding-right: 12rem;
+  }
+  /*
+  ===================================
+  Demo section
+  ===================================
+  */
+  .bcg-pattern--container {
+    max-width: 90vw;
+    margin-inline: auto;
+    margin-top: -55vw;
+  }
+  .illustration-img {
+    width: 33vw;
+    max-width: 312px;
+    margin-left: 10vw;
+  }
+
+  .bcg-pattern {
+    max-width: 40vw;
+  }
+  /*
+  ===================================
+  End of Demo section
+  ===================================
+  */
+  /*
+  ===================================
+  Premium section
+  ===================================
+  */
+  .premium--container {
+    max-width: 400px;
+    margin-inline: auto;
+    width: 55vw;
+    margin-right: 10vw;
+    margin-top: -35vw;
+  }
+  /*
+  ===================================
+  End of Premium section
+  ===================================
+  */
+  /*
+  ===================================
+  Footer
+  ===================================
+  */
+  .footer-center {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 1.5fr;
+  }
+
+  .social-media-icons {
+    justify-content: right;
+    align-items: center;
+  }
+  /*
+  ===================================
+  End of Footer
+  ===================================
+  */
+}
+
+/*
+**************************************
+1050px 
+**************************************
+ */
+
+@media screen and (min-width: 1050px) {
+  /*
+  ===================================
+  Global styles
+  ===================================
+  */
+  :root {
+    --max-fluid-width-3: 870px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 0.8;
+    margin-bottom: 0.3em;
+  }
+
+  h1 {
+    font-size: 5.5rem;
+    letter-spacing: -0.45px;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  /*
+  ===================================
+  End of Global styles
+  ===================================
+  */
+  /*
+  ===================================
+  Section styles
+  ===================================
+  */
+  .banner-center,
+  .bcg-pattern--container,
+  .footer-center {
+    width: 90vw;
+    max-width: var(--max-fluid-width-3);
+    margin-inline: auto;
+  }
+  /*
+  ===================================
+  End of Section styles
+  ===================================
+  */
+  /*
+  ===================================
+  Header
+  ===================================
+  */
+  .banner-center {
+    padding-right: 12rem;
+  }
+  /* pattern on top right corner */
+  .wide-screen--pattern {
+    max-width: 300px;
+  }
+  /*
+  ===================================
+  End of Header
+  ===================================
+  */
+  /*
+  ===================================
+  Demo section
+  ===================================
+  */
+  .bcg-pattern--container {
+    margin-top: -45vw;
+  }
+  .illustration-img {
+    width: 33vw;
+    max-width: 312px;
+    margin-left: 15vw;
+  }
+
+  .bcg-pattern {
+    max-width: 30vw;
+  }
+  /*
+  ===================================
+  End of Demo section
+  ===================================
+  */
+  /*
+  ===================================
+  Premium section
+  ===================================
+  */
+  .premium--container {
+    max-width: 400px;
+    margin-inline: auto;
+    width: 55vw;
+    margin-right: 15vw;
+    margin-top: -25vw;
+  }
+  /*
+  ===================================
+  End of Premium section
+  ===================================
+  */
+  /*
+  ===================================
+  Footer
+  ===================================
+  */
+  .footer-center {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 1.5fr;
+  }
+
+  .social-media-icons {
+    justify-content: right;
+    align-items: center;
+  }
+  /*
+  ===================================
+  End of Footer
+  ===================================
+  */
+}
