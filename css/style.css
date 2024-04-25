@@ -12,8 +12,6 @@ CSS Variables
 */
 :root {
   --clr-black: hsl(244, 23%, 12%);
-  --clr-grey: hsla(244, 23%, 12%, 0.7);
-  --clr-light-grey: hsla(15, 40%, 98%, 0.544);
   --clr-white: hsl(20, 33%, 98%);
   --clr-orange: hsl(12, 94%, 65%);
   --ff-primary: "IBM Plex Sans", sans-serif;
