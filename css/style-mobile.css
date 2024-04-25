@@ -136,6 +136,17 @@ End of Header
 */
 
 /*
+==========================================
+Body Sections
+==========================================
+*/
+
+.mobile-container {
+  border: 5px solid red;
+  position: relative;
+}
+
+/*
 ===================================
 Demo section
 ===================================
@@ -143,12 +154,14 @@ Demo section
 .illustration-img {
   width: 55vw;
   margin-inline: auto;
-  position: relative;
 }
 
 .bcg-pattern--container {
   background-color: var(--clr-black);
-  margin-top: -90vw;
+  position: absolute;
+  z-index: -5;
+  width: 100%;
+  top: 5rem;
   padding-bottom: 5rem;
   /* border: 5px solid red; */
 }
@@ -174,8 +187,8 @@ Premium section
 .premium--container {
   background-color: var(--clr-orange);
   color: var(--clr-white);
-  margin-top: -20vw;
   position: relative;
+  margin-top: 5rem;
 }
 
 .premium--center {
@@ -235,6 +248,12 @@ End of Premium section
 */
 
 /*
+==========================================
+End of Body Sections
+==========================================
+*/
+
+/*
 ===================================
 Footer
 ===================================
@@ -264,118 +283,6 @@ End of Footer
 550px 
 **************************************
 */
-
-/*
-**************************************
-700px 
-**************************************
- */
-
-@media screen and (min-width: 700px) {
-  /*
-  ===================================
-  Global styles
-  ===================================
-  */
-
-  :root {
-    --max-fluid-width-1: 700px;
-  }
-
-  h1,
-  h2,
-  h3 {
-    line-height: 1;
-    margin-bottom: 0.5em;
-  }
-
-  h1 {
-    font-size: 4rem;
-    letter-spacing: -0.45px;
-  }
-  h2 {
-    font-size: 2.5rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
-  /*
-  ===================================
-  End of Global styles
-  ===================================
-  */
-  /*
-  ===================================
-  Section styles
-  ===================================
-  */
-  .banner-center,
-  .bcg-pattern--container,
-  .footer-center {
-    width: 90vw;
-    max-width: var(--max-fluid-width-1);
-    margin-inline: auto;
-  }
-  /*
-  ===================================
-  End of Section styles
-  ===================================
-  */
-  /*
-  ===================================
-  Header
-  ===================================
-  */
-  .wide-screen--pattern {
-    display: block;
-  }
-  .banner-center {
-    padding-right: 8rem;
-  }
-  /*
-  ===================================
-  End of Header
-  ===================================
-  */
-  /*
-  ===================================
-  Demo section
-  ===================================
-  */
-  .bcg-pattern--container {
-    margin-top: -55vw;
-  }
-  .illustration-img {
-    width: 33vw;
-    margin-left: 15vw;
-  }
-
-  .bcg-pattern {
-    max-width: 40vw;
-  }
-  /*
-  ===================================
-  End of Demo section
-  ===================================
-  */
-  /*
-  ===================================
-  Premium section
-  ===================================
-  */
-  .premium--container {
-    max-width: 350px;
-    margin-inline: auto;
-    width: 55vw;
-    margin-right: 15vw;
-    margin-top: -50vw;
-  }
-  /*
-  ===================================
-  End of Premium section
-  ===================================
-  */
-}
 
 /*
 **************************************

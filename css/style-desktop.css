@@ -1,0 +1,120 @@
+/*
+**************************************
+847px 
+**************************************
+ */
+
+ @media screen and (min-width: 847px) {
+  /*
+  ===================================
+  Global styles
+  ===================================
+  */
+  :root {
+    --max-fluid-width-2: 830px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 0.8;
+    margin-bottom: 0.3em;
+  }
+
+  h1 {
+    font-size: 5.5rem;
+    letter-spacing: -0.45px;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  /*
+  ===================================
+  End of Global styles
+  ===================================
+  */
+  /*
+  ===================================
+  Section styles
+  ===================================
+  */
+  .banner-center,
+  .bcg-pattern--container,
+  .footer-center {
+    width: 90vw;
+    max-width: var(--max-fluid-width-2);
+    margin-inline: auto;
+  }
+  /*
+  ===================================
+  End of Section styles
+  ===================================
+  */
+  .banner-center {
+    padding-right: 12rem;
+  }
+  /*
+  ===================================
+  Demo section
+  ===================================
+  */
+  .bcg-pattern--container {
+    max-width: 90vw;
+    margin-inline: auto;
+    margin-top: -55vw;
+  }
+  .illustration-img {
+    width: 33vw;
+    max-width: 312px;
+    margin-left: 10vw;
+  }
+
+  .bcg-pattern {
+    max-width: 40vw;
+  }
+  /*
+  ===================================
+  End of Demo section
+  ===================================
+  */
+  /*
+  ===================================
+  Premium section
+  ===================================
+  */
+  .premium--container {
+    max-width: 400px;
+    margin-inline: auto;
+    width: 55vw;
+    margin-right: 10vw;
+    margin-top: -35vw;
+  }
+  /*
+  ===================================
+  End of Premium section
+  ===================================
+  */
+  /*
+  ===================================
+  Footer
+  ===================================
+  */
+  .footer-center {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 1.5fr;
+  }
+
+  .social-media-icons {
+    justify-content: right;
+    align-items: center;
+  }
+  /*
+  ===================================
+  End of Footer
+  ===================================
+  */
+}
